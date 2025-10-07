@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and outputs
+output/logs/*
+!output/logs/.gitkeep
+output/applications/*
+!output/applications/.gitkeep
+
+# Credentials and sensitive information
+.env
+credentials.json
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Chrome driver and selenium files
+chromedriver
+chromedriver.exe
+*.log
+geckodriver.log

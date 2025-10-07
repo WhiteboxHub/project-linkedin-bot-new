@@ -1,0 +1,39 @@
+username: your_email@example.com
+password: your_password
+
+phone_number: (123) 456-7890
+
+profile_path: '' # Can be empty, will default to system Chrome profile path
+
+role_type: ML # Options: ML, UI, QA
+
+positions:
+- ML Engineer 
+- Gen AI Engineer
+- LLM Engineer
+
+locations:
+- Bay Area, CA
+- USA, Remote
+
+roletype:
+- 1 # onsite
+- 2 # remote
+- 3 # hybrid
+
+salary: 150,000
+rate: 75
+
+uploads:
+  Resume: resumes/sample_resume.pdf
+  # Cover Letter: resumes/cover_letter.pdf
+
+gender: Male # Options: Male, Female
+
+output_filename:
+- output/applications/applications.csv
+
+blacklist:
+- Workday
+- Company Name 1
+- Company Name 2

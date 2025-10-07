@@ -1,0 +1,52 @@
+username: malathi.kaliappan11@gmail.com
+password: Innovapath@1
+phone_number: 925-699-5473
+
+profile_path: '' #can be empty, will default to 'C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default'
+
+role_type: ML
+
+positions:
+- Machine Learning Engineer
+- Gen AI
+
+locations:
+- CA ,USA
+- remote,USA
+
+roletype:
+- 1 #onsite
+- 2 #remote
+- 3 #hybrid
+
+
+salary: 150000
+rate: 60
+# --------- Optional Parameters -------
+uploads:
+  Resume: Resumes/malathi.pdf
+  # Cover Letter: /Users/steven/Desktop/LinkedIn-Easy-Apply-Bot/cl.pdf
+  #Photo: # PATH TO photo
+
+# Male or Female
+gender: Female
+
+CurrentCTC: 140000
+
+#location of Output file
+output_filename:
+- I:\IP-linkedinMarketing_applyicationBot\Deepa_EasyApply\OUTPUT.csv
+
+blacklist:
+- pryon
+- Bank of the West
+- Merck
+# - # Company names you want to ignore
+
+experience_level:
+  - 1 # Entry level
+  - 2 # Associate
+  - 3 # Mid-Senior level
+  - 4 # Director
+  - 5 # Executive
+  - 6 # Internship

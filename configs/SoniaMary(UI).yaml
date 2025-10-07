@@ -1,0 +1,54 @@
+username: soniatom2010@gmail.com
+password: Innovapath1
+phone_number: (209) 831-2875
+
+profile_path: '' #can be empty, will default to 'C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default'
+
+role_type: UI
+
+positions:
+- FrontEnd Developer
+- Full stack Developer
+- Reactjs
+- UI developer
+- Web Developer
+
+
+
+locations:
+- california
+
+
+
+roletype:
+- 1 #onsite
+- 2 #remote
+- 3 #hybrid
+
+
+salary: 160,000
+rate: 60
+# --------- Optional Parameters -------
+uploads:
+  Resume: Resumes/Sonia.pdf
+  # Cover Letter: /Users/steven/Desktop/LinkedIn-Easy-Apply-Bot/cl.pdf
+  #Photo: # PATH TO photo
+#Male or Female
+gender: Female
+
+
+output_filename:
+- I:\IP-Codebases\LinkedInAutomation\OUTPUT.csv
+
+blacklist:
+- Cisco
+- Move Inc
+- Autodesk Inc 
+
+experience_level:
+  - 1 # Entry level
+  - 2 # Associate
+  - 3 # Mid-Senior level
+  - 4 # Director
+  - 5 # Executive
+  - 6 # Internship

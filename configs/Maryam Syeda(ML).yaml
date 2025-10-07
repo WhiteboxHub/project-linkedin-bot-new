@@ -1,0 +1,53 @@
+username: maryamsyeda.work@gmail.com
+password: Innovapath1!
+phone_number: (209) 831-2991
+
+profile_path: '' #can be empty, will default to 'C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default'
+role_type: ML
+
+
+positions:
+- Machine Learning Engineer
+- Gen AI
+
+locations:
+- Bay Area,CA
+- Remote,USA
+
+roletype:
+- 1 #onsite
+- 2 #remote
+- 3 #hybrid
+
+
+salary: 150000
+rate: 90
+# --------- Optional Parameters -------
+uploads:
+  Resume: Resumes/maryam_resume.pdf
+  # Cover Letter: /Users/steven/Desktop/LinkedIn-Easy-Apply-Bot/cl.pdf
+  #Photo: # PATH TO photo
+
+# Male or Female
+gender: Female
+
+CurrentCTC: 140000
+
+#location of Output file
+output_filename:
+- I:\IP-linkedinMarketing_applyicationBot\Deepa_EasyApply\OUTPUT.csv
+
+blacklist:
+- Wells Fargo
+- CIGNA Health Insurance
+- Sallie Mae
+- 
+# - # Company names you want to ignore
+
+experience_level:
+  - 1 # Entry level
+  - 2 # Associate
+  - 3 # Mid-Senior level
+  - 4 # Director
+  - 5 # Executive
+  - 6 # Internship
