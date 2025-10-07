@@ -12,6 +12,7 @@ build/
 venv/
 env/
 ENV/
+myvenv/
 
 # IDE specific files
 .idea/
