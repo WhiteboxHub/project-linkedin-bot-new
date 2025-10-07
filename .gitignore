@@ -39,3 +39,11 @@ chromedriver
 chromedriver.exe
 *.log
 geckodriver.log
+
+
+# Ignore all files in config and resumes
+config/*
+resumes/*
+
+# But keep the folders themselves in repo
+!.gitkeep
