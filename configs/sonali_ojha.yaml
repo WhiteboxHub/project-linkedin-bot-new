@@ -1,0 +1,41 @@
+username: sonali.ojha.social@gmail.com
+password: your_password
+
+phone_number: 408-766-9128
+
+profile_path: 'C:\Users\Jafar vali\AppData\Local\Google\Chrome\User Data\Profile 37' # Full Chrome profile path for this candidate
+chrome_profile_name: 'Profile 37' # Specific Chrome profile to use for this candidate
+
+role_type: ML # Options: ML, UI, QA
+
+positions:
+- AIML Engineer
+- Gen AI Engineer
+- Machine learning Engineer
+
+locations:
+- Bay Area, CA
+- USA, Remote
+
+roletype:
+- 1 # onsite
+- 2 # remote
+- 3 # hybrid
+
+salary: 150,000
+rate: 75
+
+uploads:
+  Resume: resumes/sonali_resume.pdf
+  # Cover Letter: resumes/cover_letter.pdf
+
+gender: Female # Options: Male, Female
+
+output_filename:
+- output/applications/sonali_applications.csv
+
+blacklist:
+- Gainwell Technologies
+- E-Trade
+- First Republic Bank
+- Zelle

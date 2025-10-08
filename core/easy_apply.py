@@ -63,9 +63,11 @@ class ApplyBot:
         self.gender = parameters['gender']
         self.qa_file = Path(f"output/applications/qa_{self.username}.csv")
         self.answer = {}
+        self.chrome_profile_name = parameters.get('chrome_profile_name', 'Default')
+        self.custom_profile_path = parameters.get('profile_path', '')
         
-        # Initialize browser
-        self.browser = get_browser()
+        # Initialize browser with specific Chrome profile
+        self.browser = get_browser(self.chrome_profile_name, self.custom_profile_path if self.custom_profile_path else None)
         self.wait = WebDriverWait(self.browser, 30)
         
         # Define locators for elements

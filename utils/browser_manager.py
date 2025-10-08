@@ -15,9 +15,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 LINKEDIN_LOGIN_URL = "https://www.linkedin.com/login"
 
-def get_chrome_paths():
+def get_chrome_paths(chrome_profile_name=None, custom_profile_path=None):
     """
     Get Chrome executable and profile paths based on operating system
+    Args:
+        chrome_profile_name: Specific Chrome profile name to use (e.g., 'Profile 37', 'Default')
+        custom_profile_path: Full custom profile path if provided in config
     """
     os_name = platform.system()
     if os_name == "Windows":
@@ -47,8 +50,18 @@ def get_chrome_paths():
                 # Default to the first path if all else fails
                 chrome_path = chrome_paths[0]
                 
-        user = os.getlogin()
-        profile_path = rf"C:\Users\{user}\AppData\Local\Google\Chrome\User Data"
+        # Use custom profile path if provided, otherwise construct from profile name
+        if custom_profile_path:
+            profile_path = custom_profile_path
+        else:
+            user = os.getlogin()
+            base_profile_path = rf"C:\Users\{user}\AppData\Local\Google\Chrome\User Data"
+            
+            # If specific profile name is provided, append it to the base path
+            if chrome_profile_name and chrome_profile_name != 'Default':
+                profile_path = os.path.join(base_profile_path, chrome_profile_name)
+            else:
+                profile_path = base_profile_path
     elif os_name == "Darwin":
         chrome_path = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
         profile_path = f"/Users/{os.getlogin()}/Library/Application Support/Google/Chrome"
@@ -85,21 +98,38 @@ def find_chrome_debug_port():
             continue
     return None
 
-def launch_chrome_with_debugging():
+def launch_chrome_with_debugging(chrome_profile_name=None, custom_profile_path=None):
     """
     Launch Chrome with remote debugging enabled
+    Args:
+        chrome_profile_name: Specific Chrome profile name to use
+        custom_profile_path: Full custom profile path if provided in config
     """
-    chrome_path, profile_path = get_chrome_paths()
+    chrome_path, profile_path = get_chrome_paths(chrome_profile_name, custom_profile_path)
     port = "9223"
-    subprocess.Popen([
+    
+    # If chrome_path is None, try to use 'chrome' command directly
+    if chrome_path is None:
+        chrome_path = "chrome"  # Assume Chrome is in PATH
+    
+    # Build command arguments
+    cmd_args = [
         chrome_path,
         f'--remote-debugging-port={port}',
-        f'--user-data-dir={profile_path}',
         '--start-maximized',
         LINKEDIN_LOGIN_URL
-    ])
-    time.sleep(10)
-    return port
+    ]
+    
+    # Only add user-data-dir if profile_path exists
+    if profile_path and os.path.exists(profile_path):
+        cmd_args.insert(2, f'--user-data-dir={profile_path}')
+    
+    try:
+        subprocess.Popen(cmd_args)
+        time.sleep(10)
+        return port
+    except FileNotFoundError:
+        raise Exception("Chrome executable not found. Please install Google Chrome or ensure it's in your PATH.")
 
 def attach_to_chrome(port):
     """
@@ -114,21 +144,27 @@ def attach_to_chrome(port):
             break
     return driver
 
-def get_browser():
+def get_browser(chrome_profile_name=None, custom_profile_path=None):
     """
     Initialize browser by finding or launching Chrome with debugging
+    Args:
+        chrome_profile_name: Specific Chrome profile name to use
+        custom_profile_path: Full custom profile path if provided in config
     """
     port = find_chrome_debug_port()
     if not port:
-        port = launch_chrome_with_debugging()
+        port = launch_chrome_with_debugging(chrome_profile_name, custom_profile_path)
     return attach_to_chrome(port)
 
-def initialize_browser():
+def initialize_browser(chrome_profile_name=None, custom_profile_path=None):
     """
     Initialize browser by finding or launching Chrome with debugging
     (Alias for get_browser for backward compatibility)
+    Args:
+        chrome_profile_name: Specific Chrome profile name to use
+        custom_profile_path: Full custom profile path if provided in config
     """
-    return get_browser()
+    return get_browser(chrome_profile_name, custom_profile_path)
 
 def login_to_linkedin(driver, username, password):
     """

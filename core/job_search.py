@@ -55,9 +55,11 @@ def search_jobs(config_path):
     blacklisttitles = parameters.get('blackListTitles', [])
     experiencelevel = parameters.get('experience_level', [])
     roletype = parameters.get('roletype', [])
+    chrome_profile_name = parameters.get('chrome_profile_name', 'Default')
+    custom_profile_path = parameters.get('profile_path', '')
     
-    # Initialize browser
-    browser = get_browser()
+    # Initialize browser with specific Chrome profile
+    browser = get_browser(chrome_profile_name, custom_profile_path if custom_profile_path else None)
     wait = WebDriverWait(browser, 30)
     
     # Login to LinkedIn
