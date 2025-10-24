@@ -144,7 +144,7 @@ def search_jobs_by_position_location(browser, wait, position, location, experien
     position_str = f"&keywords={position}"
     rolestring = roletype_to_string(roletype)
     
-    print(f"🔍 Building search URL...")
+    print(f"Building search URL...")
     
     job_per_page = 0
     max_pages = 150 
