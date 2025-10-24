@@ -26,10 +26,10 @@ salary: 150,000
 rate: 75
 
 uploads:
-  Resume: resumes/sunil_resume.pdf
-  # Cover Letter: resumes/cover_letter.pdf
+  Resume: resumes/sample_resume.pdf
+ 
 
-gender: Male # Options: Male, Female
+gender: Male 
 
 output_filename:
 - output/applications/applications.csv
