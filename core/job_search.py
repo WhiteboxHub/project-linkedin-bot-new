@@ -25,10 +25,8 @@ def search_jobs(config_path):
     Returns:
         dict: Dictionary of job IDs to process
     """
-    print("\n" + "="*60)
     print("LEGACY SEARCH MODE: Collecting all job IDs first")
-    print("="*60 + "\n")
-    
+
     
     with open(config_path, 'r') as stream:
         try:

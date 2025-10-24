@@ -1,4 +1,3 @@
-
 """
 Browser manager utility for handling Chrome browser instances
 """
@@ -68,10 +67,10 @@ def launch_chrome_with_debugging(port=DEBUG_PORT):
         print("Chrome executable not found!")
         return False
 
-    
+    # Create user data directory if it doesn't exist
     os.makedirs(USER_DATA_DIR, exist_ok=True)
 
-
+    # Launch Chrome with debugging
     cmd = [
         chrome_path,
         f"--remote-debugging-port={port}",
@@ -163,7 +162,7 @@ def get_browser():
     else:
         print("No Chrome detected. Launching fresh Chrome...")
     
-    
+    # Launch fresh Chrome via Selenium
     driver = launch_fresh_selenium_chrome()
     
     if driver:

@@ -14,6 +14,20 @@ REVIEW_BUTTON_XPATH = "//button[@aria-label='Review your application']"
 FOLLOW_COMPANY_CHECKBOX = "//label[contains(@for, 'follow-company-checkbox')]"
 CLOSE_BUTTON_XPATH = "//button[@aria-label='Dismiss']"
 
+# Additional selectors to reliably find job cards and Easy Apply variations
+# Use a job card selector that targets the left-hand list of results (elements commonly include data-job-id)
+JOB_CARD_SELECTOR = "div[data-job-id]"
+JOB_CARD_LIST_ITEM = "li.jobs-search-results__list-item"
+
+# Multiple Easy Apply selector fallbacks (CSS, id, aria-label contains text)
+EASY_APPLY_SELECTORS = [
+	"#jobs-apply-button-id",
+	"button.jobs-apply-button",
+	"button[aria-label*='Easy Apply']",
+	"//button[contains(text(), 'Easy Apply')]",
+	"//button[contains(@aria-label, 'Easy Apply')]",
+]
+
 # Application form field identifiers
 PHONE_FIELD_ID = "phoneNumber"
 
