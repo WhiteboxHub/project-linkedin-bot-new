@@ -42,8 +42,10 @@ def is_chrome_running_with_debug(port=DEBUG_PORT):
     return False
 
 
+
 def get_chrome_paths():
     """Detect Chrome executable path for Windows/macOS/Linux."""
+
     os_name = platform.system()
     if os_name == "Windows":
         chrome_paths = [
@@ -52,12 +54,14 @@ def get_chrome_paths():
         ]
         for path in chrome_paths:
             if os.path.exists(path):
+
                 return path
     elif os_name == "Darwin":
         return "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
     elif os_name == "Linux":
         return "/usr/bin/google-chrome"
     return None
+
 
 
 def launch_chrome_with_debugging(port=DEBUG_PORT):
@@ -132,7 +136,7 @@ def launch_fresh_selenium_chrome():
         return None
 
 
-def get_browser():
+def get_browser(chrome_profile_name=None, custom_profile_path=None):
     """
     Main entry: Intelligently get or create browser instance.
     
@@ -174,6 +178,7 @@ def get_browser():
 def initialize_browser():
     """Alias for backward compatibility."""
     return get_browser()
+  
 
 
 def login_to_linkedin(driver, username, password):

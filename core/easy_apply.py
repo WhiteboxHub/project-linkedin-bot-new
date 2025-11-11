@@ -119,6 +119,8 @@ class ApplyBot:
         self.gender = parameters['gender']
         self.qa_file = Path(f"output/applications/qa_{self.username}.csv")
         self.answer = {}
+        self.chrome_profile_name = parameters.get('chrome_profile_name', 'Default')
+        self.custom_profile_path = parameters.get('profile_path', '')
         
         self.date_filter = parameters.get('date_posted', 'r86400')  # Default: Past 24 hours
         
@@ -126,6 +128,7 @@ class ApplyBot:
         
         print("Initializing browser...")
         self.browser = get_browser()
+
         self.wait = WebDriverWait(self.browser, 30)
         print("Browser ready\n")
         

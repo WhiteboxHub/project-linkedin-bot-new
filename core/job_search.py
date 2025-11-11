@@ -58,10 +58,14 @@ def search_jobs(config_path):
     blacklist = parameters.get('blacklist', [])
     experiencelevel = parameters.get('experience_level', [])
     roletype = parameters.get('roletype', [])
+    chrome_profile_name = parameters.get('chrome_profile_name', 'Default')
+    custom_profile_path = parameters.get('profile_path', '')
     
 
     print("Initializing browser for job search...")
     browser = get_browser()
+
+    # Initialize browser with specific Chrome profile
     wait = WebDriverWait(browser, 30)
     print(" Browser initialized\n")
     

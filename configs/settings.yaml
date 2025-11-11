@@ -3,6 +3,7 @@ password:
 phone_number: 
 
 profile_path: '' # Can be empty, will default to system Chrome profile path
+chrome_profile_name: 'Default' # Specific Chrome profile to use for this candidate
 
 role_type: ML # Options: ML, UI, QA
 
