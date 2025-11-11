@@ -1,7 +1,6 @@
-username: your_email@example.com
-password: your_password
-
-phone_number: (123) 456-7890
+username:
+password:
+phone_number: 
 
 profile_path: '' # Can be empty, will default to system Chrome profile path
 chrome_profile_name: 'Default' # Specific Chrome profile to use for this candidate
@@ -14,8 +13,10 @@ positions:
 - LLM Engineer
 
 locations:
-- Bay Area, CA
-- USA, Remote
+# - Bay Area, CA
+# - USA, Remote
+- Delhi
+
 
 roletype:
 - 1 # onsite
@@ -27,9 +28,9 @@ rate: 75
 
 uploads:
   Resume: resumes/sample_resume.pdf
-  # Cover Letter: resumes/cover_letter.pdf
+ 
 
-gender: Male # Options: Male, Female
+gender: Male 
 
 output_filename:
 - output/applications/applications.csv
